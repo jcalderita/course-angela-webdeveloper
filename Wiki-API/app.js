@@ -18,7 +18,6 @@ const Article = mongoose.model('Article', articleSchema);
 
 const getFunction = (req, res) => {
   const filter = req.params.article ? { title: req.params.article } : {};
-  console.log(filter);
   Article.find(filter, (err, result) => {
     if (err) res.send(err);
     else res.send(result);
